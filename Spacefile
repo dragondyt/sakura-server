@@ -1,0 +1,19 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: saruka-server
+    src: ./
+    engine: nodejs16
+    primary: true
+    commands:
+      - npm run build
+    dev: node dist/main.js
+    include:
+      - dist
+      - node_modules
+    run: "node dist/main.js"
+    public: true
+    presets:
+      env:
+        - name: SM_SECRET_TOKEN
+          description: SM API_TOKEN
