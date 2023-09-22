@@ -19,6 +19,7 @@ import { DataSource } from 'typeorm';
 import { CommentModule } from './controller/comment/comment.module';
 import { OssModule } from './controller/file/oss.module';
 import { MessageModule } from './controller/message/message.module';
+import {AvatarModule} from "./common/avatar/avatar.module";
 
 @Module({
   imports: [
@@ -86,6 +87,7 @@ import { MessageModule } from './controller/message/message.module';
       },
       true,
     ),
+    AvatarModule,
     UserModule,
     AuthModule,
     ArticleModule,

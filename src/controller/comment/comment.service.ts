@@ -7,6 +7,7 @@ import { plainToInstance } from 'class-transformer';
 import { getMarkdownParser } from '../../common/markdown';
 import { isBoolean, isEmpty } from '../../utils';
 import { UserEntity } from '../../system/user/user.entity';
+import {AvatarService} from "../../common/avatar/avatar.service";
 @Injectable()
 export class CommentService {
   constructor(
@@ -15,6 +16,7 @@ export class CommentService {
     @Inject(REQUEST) private readonly request: Request,
     @InjectRepository(UserEntity)
     private readonly userRepository: Repository<UserEntity>,
+    private readonly avatarService: AvatarService,
   ) {}
   //
   async saveComment(commentData: any) {
@@ -87,7 +89,7 @@ export class CommentService {
       comment.label = user.label;
     }
 
-    const avatarUrl = user && user.avatar ? user.avatar : 'comment';
+    const avatarUrl = user && user.avatar ? user.avatar : await this.avatarService.stringify(comment);
 
     comment.avatar =
       avatarProxy && !avatarUrl.includes(avatarProxy)

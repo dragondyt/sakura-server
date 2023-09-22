@@ -17,3 +17,5 @@ micros:
       env:
         - name: SM_SECRET_TOKEN
           description: SM API_TOKEN
+        - name: GRAVATAR_STR
+          description: GRAVATAR_STR

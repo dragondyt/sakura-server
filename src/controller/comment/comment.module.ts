@@ -3,12 +3,8 @@ import { CommentController } from './comment.controller';
 import { CommentService } from './comment.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from '../../system/user/user.entity';
-import { AuthModule } from '../../system/auth/auth.module';
-import { JwtModule } from '@nestjs/jwt';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { UserController } from '../../system/user/user.controller';
-import { UserService } from '../../system/user/user.service';
 import { CommentEntity } from './comment.entity';
+import {AvatarService} from "../../common/avatar/avatar.service";
 
 @Module({
   imports: [
@@ -16,7 +12,7 @@ import { CommentEntity } from './comment.entity';
     TypeOrmModule.forFeature([UserEntity]),
   ],
   controllers: [CommentController],
-  providers: [CommentService],
+  providers: [CommentService,AvatarService],
   exports: [CommentService],
 })
 export class CommentModule {}
