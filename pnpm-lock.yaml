@@ -44,6 +44,9 @@ dependencies:
   '@types/nunjucks':
     specifier: ^3.2.3
     version: 3.2.3
+  '@types/ua-parser-js':
+    specifier: ^0.7.37
+    version: 0.7.37
   '@types/uuid':
     specifier: ^9.0.3
     version: 9.0.3
@@ -137,6 +140,9 @@ dependencies:
   typeorm:
     specifier: ^0.3.17
     version: 0.3.17(ioredis@5.3.2)(mongodb@5.8.1)(sqlite3@5.1.6)(ts-node@10.9.1)
+  ua-parser-js:
+    specifier: ^1.0.36
+    version: 1.0.36
   uuid:
     specifier: ^9.0.0
     version: 9.0.0
@@ -1658,6 +1664,10 @@ packages:
     dependencies:
       '@types/superagent': 4.1.18
     dev: true
+
+  /@types/ua-parser-js@0.7.37:
+    resolution: {integrity: sha512-4sOxS3ZWXC0uHJLYcWAaLMxTvjRX3hT96eF4YWUh1ovTaenvibaZOE5uXtIp4mksKMLRwo7YDiCBCw6vBiUPVg==}
+    dev: false
 
   /@types/uuid@9.0.3:
     resolution: {integrity: sha512-taHQQH/3ZyI3zP8M/puluDEIEvtQHVYcC6y3N8ijFtAd28+Ey/G4sg1u2gB01S8MwybLOKAp9/yCMu/uR5l3Ug==}
@@ -6717,6 +6727,10 @@ packages:
     resolution: {integrity: sha512-XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  /ua-parser-js@1.0.36:
+    resolution: {integrity: sha512-znuyCIXzl8ciS3+y3fHJI/2OhQIXbXw9MWC/o3qwyR+RGppjZHrM27CGFSKCJXi2Kctiz537iOu2KnXs1lMQhw==}
+    dev: false
 
   /uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}

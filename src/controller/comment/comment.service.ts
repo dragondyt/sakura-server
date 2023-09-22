@@ -8,6 +8,7 @@ import { getMarkdownParser } from '../../common/markdown';
 import { isBoolean, isEmpty } from '../../utils';
 import { UserEntity } from '../../system/user/user.entity';
 import {AvatarService} from "../../common/avatar/avatar.service";
+import {uaParser} from "../../utils/ua";
 @Injectable()
 export class CommentService {
   constructor(
@@ -77,6 +78,14 @@ export class CommentService {
     { avatarProxy, deprecated }: any,
     loginUser: any,
   ) {
+    if (ua){
+      ua = uaParser(ua)
+      comment.browser = `${ua.browser.name || ''}${(ua.browser.version || '')
+          .split('.')
+          .slice(0, 2)
+          .join('.')}`;
+      comment.os = [ua.os.name, ua.os.version].filter((v) => v).join(' ');
+    }
     const user: any = users.find(
       ({ objectId }) => comment.user_id === objectId,
     );
