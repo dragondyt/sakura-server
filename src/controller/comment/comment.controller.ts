@@ -22,6 +22,11 @@ export class CommentController {
     return this.commentService.getCommentList(query);
     //
   }
+  @Get('recentComment')
+  @AllowAnon()
+  async recentComment() {
+    return this.commentService.recentComment();
+  }
   @Post()
   @AllowAnon()
   async save(@Body() commentData: any) {

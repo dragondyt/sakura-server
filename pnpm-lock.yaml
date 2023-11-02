@@ -44,6 +44,9 @@ dependencies:
   '@types/nunjucks':
     specifier: ^3.2.3
     version: 3.2.3
+  '@types/request-ip':
+    specifier: ^0.0.40
+    version: 0.0.40
   '@types/ua-parser-js':
     specifier: ^0.7.37
     version: 0.7.37
@@ -1628,6 +1631,12 @@ packages:
   /@types/range-parser@1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: true
+
+  /@types/request-ip@0.0.40:
+    resolution: {integrity: sha512-3pBKLRLlE5YwVWp2hQRqv6dOXWkoE3bEt+EXHTVd8Q3XNnIWFJx+VC2Dy8+DAnBI9MmSqHSljUZPeuTBMvsNYg==}
+    dependencies:
+      '@types/node': 20.3.1
+    dev: false
 
   /@types/semver@7.5.2:
     resolution: {integrity: sha512-7aqorHYgdNO4DM36stTiGO3DvKoex9TQRwsJU6vMaFGyqpBA1MNZkz+PG3gaNUPpTAOYhT1WR7M1JyA3fbS9Cw==}

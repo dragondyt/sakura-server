@@ -36,4 +36,6 @@ export class CommentEntity {
   public sticky: boolean;
   @ApiProperty({ type: Number, description: 'sticky' })
   public like: number;
+  @ApiProperty({ type: Date, description: 'insertedAt' })
+  public insertedAt: Date;
 }

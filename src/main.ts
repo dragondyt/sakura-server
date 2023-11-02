@@ -6,16 +6,7 @@ import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import express from 'express';
 import { mw as requestIpMw } from 'request-ip';
-import { Logger } from './common/libs/log4js/log4j.util';
-import Chalk from 'chalk';
-import * as path from 'path';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { logger } from './common/libs/log4js/logger.middleware';
-import { ValidationPipe } from '@nestjs/common';
-import { TransformInterceptor } from './common/libs/log4js/transform.interceptor';
-import { ExceptionsFilter } from './common/libs/log4js/exceptions-filter';
-import { HttpExceptionsFilter } from './common/libs/log4js/http-exceptions-filter';
-
 async function bootstrap() {
   // 创建 app
   const app = await NestFactory.create(AppModule, {
@@ -62,7 +53,7 @@ async function bootstrap() {
     customSiteTitle: 'Nest-Admin API Docs',
   });
   // 获取真实 ip
-  // app.use(requestIpMw({ attributeName: 'ip' }));
+  app.use(requestIpMw({ attributeName: 'ip' }));
 
   // // 全局验证
   // app.useGlobalPipes(
@@ -77,12 +68,12 @@ async function bootstrap() {
   // 日志
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(logger);
+  // app.use(logger);
   // // 使用全局拦截器打印出参
-  app.useGlobalInterceptors(new TransformInterceptor());
+  // app.useGlobalInterceptors(new TransformInterceptor());
   // 所有异常
-  app.useGlobalFilters(new ExceptionsFilter());
-  app.useGlobalFilters(new HttpExceptionsFilter());
+  // app.useGlobalFilters(new ExceptionsFilter());
+  // app.useGlobalFilters(new HttpExceptionsFilter());
   // 获取配置端口
   const port = process.env.PORT || 8080;
   await app.listen(port);
@@ -110,3 +101,4 @@ async function bootstrap() {
 bootstrap().then(() => {
   // Logger.log(Chalk.green(`Nest-Admin 服务启动成功 `));
 });
+

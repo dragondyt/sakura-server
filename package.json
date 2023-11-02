@@ -33,6 +33,7 @@
     "@nestjs/typeorm": "^10.0.0",
     "@types/form-data": "^2.5.0",
     "@types/nunjucks": "^3.2.3",
+    "@types/request-ip": "^0.0.40",
     "@types/ua-parser-js": "^0.7.37",
     "@types/uuid": "^9.0.3",
     "bcryptjs": "^2.4.3",
